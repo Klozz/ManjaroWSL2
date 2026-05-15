@@ -5,9 +5,12 @@ This project is in no way related to or created by the official Manjaro team or 
 ## ManjaroWSL2
 Manjaro on WSL2 (Windows 10 FCU or later) based on [wsldl](https://github.com/yuk7/wsldl).
 
-[![Screenshot-2022-11-17-155106.png](https://i.postimg.cc/YCk0Gs9H/Screenshot-2022-11-17-155106.png)](https://postimg.cc/sv6sbK76)
-[![Github All Releases](https://img.shields.io/github/downloads/sileshn/ManjaroWSL2/total?logo=github&style=flat-square)](https://github.com/sileshn/ManjaroWSL2/releases) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/sileshn/ManjaroWSL2?display_name=release&label=latest%20release&style=flat-square)](https://github.com/sileshn/ManjaroWSL2/releases/latest)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/sileshn/ManjaroWSL2.svg?style=flat-square)](https://github.com/sileshn/ManjaroWSL2/blob/main/LICENSE)
+Based on sileshn [sileshn/ManjaroWSL2](https://github.com/sileshn/ManjaroWSL2) with additions to allow us to build Android Custom Roms on WSL2 (It is updated automatically every month )
+
+<img width="826" height="568" alt="image" src="https://github.com/user-attachments/assets/b8a90e50-b944-4497-8cd4-2bb4e166f8c8" />
+
+[![Github All Releases](https://img.shields.io/github/downloads/Klozz/ManjaroWSL2/total?logo=github&style=flat-square)](https://github.com/Klozz/ManjaroWSL2/releases) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Klozz/ManjaroWSL2?display_name=release&label=latest%20release&style=flat-square)](https://github.com/Klozz/ManjaroWSL2/releases/latest)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/Klozz/ManjaroWSL2.svg?style=flat-square)](https://github.com/Klozz/ManjaroWSL2/blob/main/LICENSE)
 
 ## Features and important information
 ManjaroWSL2 may not properly load the Intel WSL driver by default which makes it impossible to use the D3D12 driver on Intel graphics cards. This is because the Intel WSL driver files link against libraries that do not exist on Manjaro. You can manually fix this issue using `ldd` to see which libraries they are linked, eg: `ldd /usr/lib/wsl/drivers/iigd_dch_d.inf_amd64_49b17bc90a910771/*.so`, and then try installing the libraries marked `not found` from the Manjaro package repository. If the corresponding library file is not found in the package repository, it may be that the version suffix of the library file is different, such as `libedit.so.0.0.68` and `libedit.so.2`. In such a case, you can try to create a symlink.
